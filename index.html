@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul id="scene">
+            <li class="layer" data-depth="0"><img class="img" height="800px" src="images/stars.png"></li>
+            <li class="layer" data-depth=".2"><img class="img" height="800px" src="images/circle.png"></li>
+            <li class="layer" data-depth=".2"><img class="img" height="800px" src="images/ball.png"></li>
+            <li class="layer" data-depth=".3"><img class="img" height="800px" src="images/screens.png"></li>
+            <li class="layer" data-depth=".4"><img class="img" height="800px" src="images/name.png"></li>
+            <li class="layer" data-depth=".9"><img class="img" height="800px" src="images/cat.png"></li>
+        </ul>
+    </div>
+    <script src="scripts/parallax.js"></script>
+    <script>
+        var scene=document.getElementById('scene');
+        var parallax=new Parallax(scene);
+    </script>
+</body>
+</html>
