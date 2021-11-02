@@ -284,10 +284,22 @@
     this.wh = window.innerHeight;
     this.wcx = this.ww * this.originX;
     this.wcy = this.wh * this.originY;
-    this.wrx = Math.max(this.wcx, this.ww - this.wcx);
-    this.wry = Math.max(this.wcy, this.wh - this.wcy);
+    this.wrx = Math.max(-this.wcx, -this.ww + this.wcx);
+    this.wry = Math.max(-this.wcy, -this.wh + this.wcy);
   };
+  // Parallax.prototype.updateDimensions = function() {
+  //   this.ww = window.innerWidth;
+  //   this.wh = window.innerHeight;
+  //   this.wcx = this.ww * this.originX;
+  //   this.wcy = this.wh * this.originY;
+  //   this.wrx = Math.max(this.wcx, this.ww - this.wcx);
+  //   this.wry = Math.max(this.wcy, this.wh - this.wcy);
+  // };
 
+  // following factor which means how the img follows the mouse. 
+  // In detail, there are 2 ways
+  // one is following the mouse by positive scale
+  // the other is by negtive scale.
   Parallax.prototype.updateBounds = function() {
     this.bounds = this.element.getBoundingClientRect();
     this.ex = this.bounds.left;
@@ -296,9 +308,20 @@
     this.eh = this.bounds.height;
     this.ecx = this.ew * this.originX;
     this.ecy = this.eh * this.originY;
-    this.erx = Math.max(this.ecx, this.ew - this.ecx);
-    this.ery = Math.max(this.ecy, this.eh - this.ecy);
+    this.erx = Math.max(-this.ecx, -this.ew + this.ecx);
+    this.ery = Math.max(-this.ecy, -this.eh + this.ecy);
   };
+  // Parallax.prototype.updateBounds = function() {
+  //   this.bounds = this.element.getBoundingClientRect();
+  //   this.ex = this.bounds.left;
+  //   this.ey = this.bounds.top;
+  //   this.ew = this.bounds.width;
+  //   this.eh = this.bounds.height;
+  //   this.ecx = this.ew * this.originX;
+  //   this.ecy = this.eh * this.originY;
+  //   this.erx = Math.max(this.ecx, this.ew - this.ecx);
+  //   this.ery = Math.max(this.ecy, this.eh - this.ecy);
+  // };
 
   Parallax.prototype.queueCalibration = function(delay) {
     clearTimeout(this.calibrationTimer);
